@@ -1,5 +1,12 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
+curl -s "https://api.github.com/repos/skyzzkl/zensys/contents/.zen?ref=main" | jq -r '.[] | select(.type == "file") | .download_url' |
+while read -r url; do
+    echo "Baixando $url"
+    curl -s -L "$url" -o "$HOME/$(basename "$url")"
+done
+
+
 RESET='\033[0m'
 BOLD='\033[1m'
 TITLE='\033[38;5;85m'
