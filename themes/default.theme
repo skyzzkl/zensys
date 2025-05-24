@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+export RESET='\033[0m'
+export BOLD='\033[1m'
+
+export TITLE='\033[38;5;85m'       # Título verde vibrante
+export LABEL='\033[38;5;120m'      # Rótulos verde suave
+export VALUE='\033[38;5;158m'      # Valores verde claro
+export SEPARATOR='\033[38;5;240m'  # Separador cinza escuro
+export TIP='\033[38;5;245m'        # Dica cinza claro
