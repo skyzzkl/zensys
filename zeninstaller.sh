@@ -61,7 +61,7 @@ install_packages() {
   echo -e "${ARROW} ${LABEL}Atualizando pacotes...${RESET}"
   pkg update -y > /dev/null 2>&1 && pkg upgrade -y > /dev/null 2>&1
   
-  local deps=(termux-api bash coreutils git jq tree ncurses-utils which procps iproute2 nodejs fzf)
+  local deps=(termux-api bash coreutils git jq tree ncurses-utils which procps iproute2 nodejs fzf proot)
   echo -e "${ARROW} ${LABEL}Instalando:\n${RESET} ${VALUE}${deps[*]}${RESET}"
   pkg install -y "${deps[@]}" > /dev/null 2>&1
   
