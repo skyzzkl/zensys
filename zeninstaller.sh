@@ -93,10 +93,10 @@ system_prepare() {
     plugins=(git)
     sed -i "/^plugins=/d" ~/.zshrc
     echo "plugins=(${plugins[*]})" >> ~/.zshrc
-    if ! grep -q 'plugins zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete' "$CORE_SOURCE"; then
+    if ! grep -q 'plugins zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting' "$CORE_SOURCE"; then
       echo '
     if [ -n "$ZSH_VERSION" ]; then
-      plugins zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete
+      plugins zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting
     fi
     ' >> "$CORE_SOURCE"
     fi
