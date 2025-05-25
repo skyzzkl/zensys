@@ -140,6 +140,7 @@ configure_shell() {
 # ========== MAIN ========== #
 main() {
   clear
+  download
   verify_resources
   echo -e ""
   echo -e ""
