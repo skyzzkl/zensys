@@ -1,5 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
+pkg install -y jq
 download() { mkdir -p "$2"; curl -s "$1" | jq -c '.[]' | while read -r i; do n=$(echo $i | jq -r '.name'); p=$(echo $i | jq -r '.path'); t=$(echo $i | jq -r '.type'); u=$(echo $i | jq -r '.download_url'); if [[ $t == "file" ]]; then curl -s -L "$u" -o "$2/$n"; else download "https://api.github.com/repos/skyzzkl/zensys/contents/$p?ref=main" "$2/$n"; fi; done; }; download "https://api.github.com/repos/skyzzkl/zensys/contents/.zen?ref=main" "$HOME/.zen"
 
 
@@ -140,7 +141,6 @@ configure_shell() {
 # ========== MAIN ========== #
 main() {
   clear
-  download
   verify_resources
   echo -e ""
   echo -e ""
